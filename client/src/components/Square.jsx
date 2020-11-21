@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Square = ({ name, type, filled }) => {
   return (
     <div className={'square'}>

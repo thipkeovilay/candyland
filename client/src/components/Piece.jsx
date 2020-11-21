@@ -1,5 +1,5 @@
 const Piece = () => {
-  return <div>I'm the boot!</div>;
+  return <div>Oompa Loompa!</div>;
 };
 
 export default Piece;

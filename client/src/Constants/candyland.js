@@ -12,3 +12,10 @@ const board = [
 
 // { type: 'color', value: 'orange', shape: 'triangle', curved: false },
 // { type: 'color', value: 'red', shape: 'triangle', curved: 'right' },
+
+// Start
+const board = [
+  /* Component 1 */
+];
+
+// Finish
