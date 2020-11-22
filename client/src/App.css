@@ -1,10 +1,18 @@
 .square {
   border: 1px solid #ccc;
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
 }
 
-.board {
+/* .board {
   display: flex;
   flex-wrap: wrap;
+} */
+
+/* This is where we define how many tiles across/down 
+- we don't want it to felx */
+.board {
+  display: grid;
+  grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
+  grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
 }
