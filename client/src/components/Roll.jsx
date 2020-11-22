@@ -1,6 +1,6 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+
 const Roll = () => {
   const { roll, setRoll } = useContext(AppContext);
   const rollTheDice = () => {
