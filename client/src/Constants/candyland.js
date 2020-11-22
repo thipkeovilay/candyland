@@ -90,3 +90,5 @@ const board = [
   { id: 87 },
   { id: 88 }
 ];
+
+module.exports = board;
