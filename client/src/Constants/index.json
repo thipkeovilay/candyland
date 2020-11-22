@@ -1,46 +1,86 @@
-//This represents each card.
-
 [
   {
     "id": 1,
     "type": "color",
     "value": "red",
-    "shape": "heart"
+    "name": "heart",
+    "src": "./images/cards/heart-card"
   },
   {
     "id": 2,
     "type": "color",
     "value": "orange",
-    "shape": "diamond"
+    "name": "diamond",
+    "src": "../images/cards/diamond-card"
   },
   {
     "id": 3,
     "type": "color",
     "value": "yellow",
-    "shape": "star"
+    "name": "star",
+    "src": "../images/cards/star-card"
   },
   {
     "id": 4,
     "type": "color",
     "value": "green",
-    "shape": "triange"
+    "name": "triange",
+    "src": "../images/cards/triangle-card"
   },
   {
     "id": 5,
     "type": "color",
     "value": "blue",
-    "shape": "circle"
+    "name": "circle",
+    "src": "../images/cards/circle-card"
   },
   {
     "id": 6,
     "type": "color",
     "value": "purple",
-    "shape": "square"
+    "name": "square",
+    "src": "../images/cards/square-card"
   },
   {
     "id": 7,
     "type": "image",
-    "value": "URL",
-    "shape": "square"
+    "value": "agustus",
+    "name": "agustus",
+    "src": "../images/cards/agustus-card"
+  },
+  {
+    "id": 8,
+    "type": "image",
+    "value": "blueberry",
+    "name": "blueberry",
+    "src": "../images/cards/blueberry-card"
+  },
+  {
+    "id": 9,
+    "type": "image",
+    "value": "veruca",
+    "name": "veruca",
+    "src": "../images/cards/veruca-card"
+  },
+  {
+    "id": 10,
+    "type": "image",
+    "value": "mike",
+    "name": "mike",
+    "src": "../images/cards/mike-card"
+  },
+  {
+    "id": 11,
+    "type": "image",
+    "value": "charlie",
+    "name": "charlie",
+    "src": "../images/cards/charlie-card"
+  },
+  {
+    "id": 12,
+    "type": "image",
+    "value": "willy",
+    "name": "willy",
+    "src": "../images/cards/willy-card"
   }
 ]
