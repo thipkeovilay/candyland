@@ -14,7 +14,7 @@ export const AppContextProvider = ({ children }) => {
   }, [roll]);
 
   useEffect(() => {
-    const icons = ['🐶', '🚲', '👟', '🚢', '🧢', '🚗', '🛸', '🦁'];
+    const icons = [<img src={'../images/board/Oompa.png'} />];
     let arr = [];
     for (let i = 0; i < numOfPlayers; i++) {
       arr.push({

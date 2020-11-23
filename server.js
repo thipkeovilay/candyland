@@ -8,46 +8,81 @@ const app = express();
 
 const cards = [
   {
-    id: 1,
+    index: 1,
     type: 'color',
     value: 'red',
     shape: 'heart'
   },
   {
-    id: 2,
+    index: 2,
     type: 'color',
     value: 'orange',
     shape: 'diamond'
   },
   {
-    id: 3,
+    index: 3,
     type: 'color',
     value: 'yellow',
     shape: 'star'
   },
   {
-    id: 4,
+    index: 4,
     type: 'color',
     value: 'green',
     shape: 'triange'
   },
   {
-    id: 5,
+    index: 5,
     type: 'color',
     value: 'blue',
     shape: 'circle'
   },
   {
-    id: 6,
+    index: 6,
     type: 'color',
     value: 'purple',
     shape: 'square'
   },
   {
-    id: 7,
+    index: 7,
     type: 'image',
     value: 'URL',
     shape: 'square'
+  },
+  {
+    index: 8,
+    type: 'image',
+    value: 'blueberry',
+    name: 'blueberry',
+    src: '../images/cards/blueberry-card'
+  },
+  {
+    index: 9,
+    type: 'image',
+    value: 'veruca',
+    name: 'veruca',
+    src: '../images/cards/veruca-card'
+  },
+  {
+    index: 10,
+    type: 'image',
+    value: 'mike',
+    name: 'mike',
+    src: '../images/cards/mike-card'
+  },
+  {
+    index: 11,
+    type: 'image',
+    value: 'charlie',
+    name: 'charlie',
+    src: '../images/cards/charlie-card'
+  },
+  {
+    index: 12,
+    type: 'image',
+    value: 'willy',
+    name: 'willy',
+    src: '../images/cards/willy-card'
   }
 ];
 
