@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import ReactDOM from 'react-dom';
-
+import Modal from 'react-bootstrap/Modal';
+import axios from 'axios';
 // document
 //   .getElementById('button')
 //   .addEventListener('click', function rollTheDice() {
@@ -9,11 +10,24 @@ import ReactDOM from 'react-dom';
 //   });
 
 const Roll = () => {
-  const { roll, setRoll } = useContext(AppContext);
-  const rollTheDice = () => {
-    alert('HELLO!');
-    setRoll(Math.floor(Math.random() * 12 + 1));
+  const { roll, setRoll, setPosition } = useContext(AppContext);
+
+  const rollTheDice = async (e) => {
+    e.preventDefault();
+    const randomNumber = Math.floor(Math.random() * 12 + 1);
+    setRoll(randomNumber);
+    try {
+      const { data } = await axios.get(`/api/draw/${randomNumber}`);
+      console.log(data);
+      setPosition(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  // const handleRoll = async () => {
+
+  // };
 
   return (
     <div>
@@ -26,4 +40,3 @@ const Roll = () => {
 };
 
 export default Roll;
-ReactDOM.render(Roll, document.getElementById('root'));

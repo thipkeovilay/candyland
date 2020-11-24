@@ -1,22 +1,59 @@
-.square {
-  border: 1px solid #ccc;
-  width: 8rem;
-  height: 8rem;
-}
-/* 
-.heart {
-  image width;
-} */
-
-/* .board {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
 /* This is where we define how many tiles across/down 
 - we don't want it to felx */
 .board {
   display: grid;
   grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
+  background-image: url('./images/factory-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 200vh;
+}
+
+.Square {
+  width: 8rem;
+  height: 8rem;
+  margin-left: 180px;
+}
+
+.heart {
+  border: 2px solid white;
+}
+
+.diamond {
+  border: 2px solid white;
+}
+
+.star {
+  border: 2px solid white;
+}
+
+.triangle {
+  border: 2px solid white;
+}
+
+.circle {
+  border: 2px solid white;
+}
+
+.square {
+  border: 2px solid white;
+}
+
+.boardImages {
+  width: 8rem;
+  height: 8rem;
+}
+
+.characterImages {
+  width: 8rem;
+  height: 132px;
+  border: 2px solid white;
+}
+
+.oompa-img {
+  width: 8rem;
+  height: 132px;
+  border: 2px solid white;
 }
