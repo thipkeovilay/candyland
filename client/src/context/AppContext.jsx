@@ -6,6 +6,7 @@ export const AppContextProvider = ({ children }) => {
   const [roll, setRoll] = useState(0);
   const [position, setPosition] = useState(0);
   const [boardData, setBoardData] = useState([]);
+  const [positionSuit, setPositionSuit] = useState('');
 
   //BELOW IS WHERE WE WOULD ADD IF STATEMENT FOR CONNECTING #'S W SPECIAL CHARACTERS & POSITIONS
   //IF YOU ROLE A 7, CONNECT POSITION {6} TO THAT # (hard set that position to whichever index # he is from candyland.js).
@@ -48,7 +49,9 @@ export const AppContextProvider = ({ children }) => {
         setRoll,
         position,
         setPosition,
-        boardData
+        boardData,
+        positionSuit,
+        setPositionSuit
       }}
     >
       {children}
