@@ -16,43 +16,39 @@ import star from '../images/board/star.png';
 import triangle from '../images/board/triangle.png';
 
 const Board = () => {
-  const { position, boardData, positionSuit, setPositionSuit } = useContext(
-    AppContext
-  );
+  const {
+    position,
+    boardData,
+    positionSuit,
+    setPosition,
+    setPositionSuit
+  } = useContext(AppContext);
+  const [oompa, setOompa] = useState(0);
 
-  const [oompa, setOompa] = useState({
-    index: 0,
-    type: '',
-    value: '',
-    name: ''
-  });
+  useEffect(() => {
+    let filterSpaces = boardData
+      .filter((item) => {
+        return item.value === positionSuit;
+      })
+      .map((item, index, array) => {
+        return item.index;
+      });
+    console.log(filterSpaces);
 
-  let filterSpaces = boardData.filter((item) => {
-    return item.value === positionSuit;
-  });
-  console.log(filterSpaces);
+    let moveOompa = () => {
+      let i = -1;
 
-  const next = async () => {
-    var i = 0,
-      l = filterSpaces.length;
+      if (i !== filterSpaces.length - 2) {
+        i += 1;
+      } else {
+        i = 0;
+      }
 
-    while (true) {
-      // keep looping
-      if (i >= l) i = 0;
+      setOompa(filterSpaces[i]);
+    };
 
-      // the loop block
-
-      break;
-
-      i += 1;
-    }
-    let nextElement = await filterSpaces[
-      i == filterSpaces.length - 1 ? 0 : i + 1
-    ];
-    console.log(nextElement);
-  };
-
-  next();
+    moveOompa();
+  }, [position]);
 
   //check index position then display card with sweet effect
 
@@ -67,10 +63,10 @@ const Board = () => {
             return a.index > b.index ? 1 : a.index < b.index ? -1 : 0;
           })
           .map((space, index) => {
-            console.log(position);
-            console.log(space.index);
-            console.log(oompa.position);
-            if (positionSuit === space.value) {
+            // console.log(position);
+            // console.log(space.index);
+            // console.log(oompa.position);
+            if (positionSuit === space.value && space.index === oompa) {
               // const handleRoll = (arr) => {
               //   let cur = 0;
               //   arr.next = function () {
@@ -100,6 +96,8 @@ const Board = () => {
               // };
 
               // cycle(boardData, space.index);
+              console.log(space.index);
+              console.log(oompa);
               return (
                 <div className="Square">
                   <div className="Oompa">

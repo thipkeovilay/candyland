@@ -83,7 +83,7 @@ const Roll = () => {
 
     try {
       const { data } = await axios.get(`/api/draw/${randomNumber}`);
-      console.log(data);
+      // console.log(data);
       setPositionSuit(data.value);
       setPosition(Math.floor(data.id * 3.5) + 1);
       const displayCard = () => {
@@ -94,8 +94,8 @@ const Roll = () => {
         }
       };
       displayCard();
-      console.log(data.name);
-      console.log(data.id);
+      // console.log(data.name);
+      // console.log(data.id);
     } catch (error) {
       console.log(error);
     }
