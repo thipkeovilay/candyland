@@ -8,77 +8,84 @@ const app = express();
 
 const cards = [
   {
-    index: 1,
+    id: 0,
     type: 'color',
     value: 'red',
-    shape: 'heart'
+    name: 'heart',
+    src: '../images/cards/heart-card'
   },
   {
-    index: 2,
+    id: 1,
     type: 'color',
     value: 'orange',
-    shape: 'diamond'
+    name: 'diamond',
+    src: '../images/cards/diamond-card'
   },
   {
-    index: 3,
+    id: 2,
     type: 'color',
     value: 'yellow',
-    shape: 'star'
+    name: 'star',
+    src: '../images/cards/star-card'
   },
   {
-    index: 4,
+    id: 3,
     type: 'color',
     value: 'green',
-    shape: 'triange'
+    name: 'triangle',
+    src: '../images/cards/triangle-card'
   },
   {
-    index: 5,
+    id: 4,
     type: 'color',
     value: 'blue',
-    shape: 'circle'
+    name: 'circle',
+    src: '../images/cards/circle-card'
   },
   {
-    index: 6,
+    id: 5,
     type: 'color',
     value: 'purple',
-    shape: 'square'
+    name: 'square',
+    src: '../images/cards/square-card'
   },
   {
-    index: 7,
+    id: 6,
     type: 'image',
-    value: 'URL',
-    shape: 'square'
+    value: 'agustus',
+    name: 'agustus',
+    src: '../images/cards/agustus-card'
   },
   {
-    index: 8,
+    id: 7,
     type: 'image',
     value: 'blueberry',
     name: 'blueberry',
     src: '../images/cards/blueberry-card'
   },
   {
-    index: 9,
+    id: 8,
     type: 'image',
     value: 'veruca',
     name: 'veruca',
     src: '../images/cards/veruca-card'
   },
   {
-    index: 10,
+    id: 9,
     type: 'image',
     value: 'mike',
     name: 'mike',
     src: '../images/cards/mike-card'
   },
   {
-    index: 11,
+    id: 10,
     type: 'image',
     value: 'charlie',
     name: 'charlie',
     src: '../images/cards/charlie-card'
   },
   {
-    index: 12,
+    id: 11,
     type: 'image',
     value: 'willy',
     name: 'willy',

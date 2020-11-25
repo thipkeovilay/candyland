@@ -7,7 +7,7 @@ const Square = ({ name, type, filled, value }) => {
       <div>{name}</div>
       <div>{type}</div>
       <div>{value}</div>
-      {/* <div>{filled ? <img src={Oompa} /> : null}</div> */}
+      <div>{filled ? <img src={Oompa} /> : null}</div>
     </div>
   );
 };
