@@ -1,5 +1,63 @@
 /* This is where we define how many tiles across/down 
 - we don't want it to felx */
+.board {
+  display: grid;
+  grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
+  grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
+  grid-gap: 2rem;
+  background: rgb(188, 247, 255);
+  background: radial-gradient(
+    circle,
+    rgba(188, 247, 255, 1) 0%,
+    rgba(148, 216, 233, 1) 100%
+  );
+  /* background-image: url('./images/factory-background.jpg'); */
+  /* background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 200vh;
+  align-content: center; */
+}
+
+.wonkaheader {
+  width: 24rem;
+}
+
+.Square {
+  width: 8rem;
+  height: 8rem;
+  margin-left: 90px;
+}
+
+.boardImages {
+  width: 8rem;
+  height: 8rem;
+}
+
+.characterImages {
+  width: 8rem;
+  height: 8rem;
+}
+
+.oompa-img {
+  width: 8rem;
+  height: 8rem;
+}
+
+.peppermint {
+  animation: rotation 8s infinite linear;
+  height: 10rem;
+  width: 10rem;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
 
 /* html,
 body,
@@ -13,8 +71,8 @@ body,
   overflow: hidden;
 }
 .cloudcontainer {
-  background-color: #007ced;
-  background: linear-gradient(to bottom, #007ced 1%, #cce4ff 75%);
+  background-color: #004ced;
+  background: linear-gradient(to bottom, #006ced 1%, #cce4ff 75%);
 }
 #cloud-intro {
   position: relative;
@@ -35,63 +93,3 @@ body,
     background-position: 1000px 200px, 1200px 300px, 1100px 250px;
   }
 } */
-
-.board {
-  display: grid;
-  grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
-  grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
-  grid-gap: 2rem;
-  /* background-image: url('./images/factory-background.jpg'); */
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 200vh;
-  align-content: center; */
-}
-
-.Square {
-  width: 8rem;
-  height: 8rem;
-  margin-left: 180px;
-}
-
-.heart {
-  background-color: white;
-}
-
-.diamond {
-  background-color: white;
-}
-
-.star {
-  background-color: white;
-}
-
-.triangle {
-  background-color: white;
-}
-
-.circle {
-  background-color: white;
-}
-
-.square {
-  background-color: white;
-}
-
-.boardImages {
-  width: 8rem;
-  height: 8rem;
-}
-
-.characterImages {
-  width: 8rem;
-  height: 8rem;
-  background-color: white;
-}
-
-.oompa-img {
-  width: 8rem;
-  height: 8rem;
-  background-color: white;
-}

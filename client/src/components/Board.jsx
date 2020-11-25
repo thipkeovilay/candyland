@@ -14,8 +14,6 @@ import heart from '../images/board/heart.png';
 import square from '../images/board/square.png';
 import star from '../images/board/star.png';
 import triangle from '../images/board/triangle.png';
-import Swal from 'sweetalert2';
-import goldenticket from '../images/golden-ticket.png';
 
 const Board = () => {
   const { position, boardData, positionSuit, setPositionSuit } = useContext(
@@ -29,82 +27,34 @@ const Board = () => {
     name: ''
   });
 
-  useEffect(() => {
-    // const randomIndex = Math.floor(Math.random() * 12 + 1);
-    console.log(position);
-    if (position === 0) return;
-    if (position === 41) {
-      return Swal.fire({
-        title: 'Sweet! You won!',
-        imageUrl: goldenticket,
-        imageWidth: 700,
-        imageHeight: 200,
-        imageAlt: 'Golden Ticket'
-      });
+  let filterSpaces = boardData.filter((item) => {
+    return item.value === positionSuit;
+  });
+  console.log(filterSpaces);
+
+  const next = async () => {
+    var i = 0,
+      l = filterSpaces.length;
+
+    while (true) {
+      // keep looping
+      if (i >= l) i = 0;
+
+      // the loop block
+
+      break;
+
+      i += 1;
     }
+    let nextElement = await filterSpaces[
+      i == filterSpaces.length - 1 ? 0 : i + 1
+    ];
+    console.log(nextElement);
+  };
 
-    let filterSpaces = boardData.filter((item) => {
-      return item.value === positionSuit;
-    });
-    console.log(filterSpaces);
+  next();
 
-    const next = async () => {
-      var i = 0,
-        l = filterSpaces.length;
-
-      while (true) {
-        // keep looping
-        if (i >= l) i = 0;
-
-        // the loop block
-
-        break;
-
-        i += 1;
-      }
-      let nextElement = await filterSpaces[
-        i == filterSpaces.length - 1 ? 0 : i + 1
-      ];
-      console.log(nextElement);
-    };
-
-    next();
-
-    //check index position then display card with sweet effect
-
-    //call function and capture return of the function to display cards randomly, fix line 41.
-    //   let timerInterval;
-    //   Swal.fire({
-    //     imageUrl: { goldenticket },
-    //     imageWidth: 200,
-    //     imageHeight: 300,
-    //     timer: 5000,
-    //     timerProgressBar: true,
-    //     showConfirmButton: false,
-    //     willOpen: () => {
-    //       timerInterval = setInterval(() => {
-    //         const content = Swal.getContent();
-    //         if (content) {
-    //           const b = content.querySelector('b');
-    //           if (b) {
-    //             b.textContent = Swal.getTimerLeft();
-    //           }
-    //         }
-    //       }, 100);
-    //     },
-    //     willClose: () => {
-    //       clearInterval(timerInterval);
-    //     }
-    //   }).then((result) => {
-    //     /* Read more about handling dismissals below */
-    //     if (result.dismiss === Swal.DismissReason.timer) {
-    //       console.log('I was closed by the timer');
-    //     }
-    //   });
-  }, [position]);
-
-  // WHY DOES IT WANT TO AUTOMATICALLY GO TO THE USE EFFECT BELOW??? Below can we insert a function to change the ok button to do you want to replay?
-  //end game where we insert golden ticket.
+  //check index position then display card with sweet effect
 
   //add button to restart (CAN POSSIBLY BE DONE IN SWEET ALERT)
 

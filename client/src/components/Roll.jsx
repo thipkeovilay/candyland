@@ -1,15 +1,69 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
 import ReactDOM from 'react-dom';
 import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import goldenticket from '../images/golden-ticket.png';
+import heart from '../images/board/heart.png';
+import pushcandy from '../images/pushcandy.png';
 
-// document
-//   .getElementById('button')
-//   .addEventListener('click', function rollTheDice() {
-//     alert('The form has been submitted!');
-//   });
+const Board = () => {
+  const { position, boardData, positionSuit, setPositionSuit } = useContext(
+    AppContext
+  );
+
+  useEffect(() => {
+    // const randomIndex = Math.floor(Math.random() * 12 + 1);
+    console.log(position);
+    if (position === 0) return;
+    if (position === 41) {
+      return Swal.fire({
+        title: 'Sweet! You won!',
+        imageUrl: goldenticket,
+        imageWidth: 700,
+        imageHeight: 200,
+        imageAlt: 'Golden Ticket'
+      });
+    }
+
+    document
+      .getElementById('button')
+      .addEventListener('click', function rollTheDice() {
+        alert('The form has been submitted!');
+      });
+
+    // call function and capture return of the function to display cards randomly, fix line 31.
+    let timerInterval;
+    Swal.fire({
+      imageUrl: heart,
+      imageWidth: 200,
+      imageHeight: 300,
+      timer: 5000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+      willOpen: () => {
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent();
+          if (content) {
+            const b = content.querySelector('b');
+            if (b) {
+              b.textContent = Swal.getTimerLeft();
+            }
+          }
+        }, 100);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer');
+      }
+    });
+  }, [position]);
+};
 
 const Roll = () => {
   const {
@@ -35,10 +89,8 @@ const Roll = () => {
       const displayCard = () => {
         if (roll === 1) {
           setImage(data.src);
-          alert('You rolled a 1!');
         } else {
           setImage({ goldenticket });
-          alert('You rolled something else!');
         }
       };
       displayCard();
@@ -52,7 +104,7 @@ const Roll = () => {
   return (
     <div>
       <button id="button" onClick={rollTheDice}>
-        Roll
+        <img className="peppermint" src={pushcandy} alt="candy" />
       </button>
       <span>{roll}</span>
     </div>
