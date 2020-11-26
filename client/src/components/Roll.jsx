@@ -78,7 +78,7 @@ const Roll = () => {
 
   const rollTheDice = async (e) => {
     e.preventDefault();
-    const randomNumber = Math.floor(Math.random() * 12 + 1);
+    const randomNumber = Math.floor(Math.random() * 12);
     setRoll(randomNumber);
 
     try {
@@ -106,7 +106,7 @@ const Roll = () => {
       <button id="button" onClick={rollTheDice}>
         <img className="peppermint" src={pushcandy} alt="candy" />
       </button>
-      <span>{roll}</span>
+      <span>{positionSuit}</span>
     </div>
   );
 };
