@@ -28,8 +28,8 @@ const board = [
   { index: 9, type: 'color', value: 'yellow', name: 'star2' },
   { index: 15, type: 'color', value: 'orange', name: 'diamond3' },
   { index: 14, type: 'color', value: 'red', name: 'heart3' },
-  { index: 13, type: 'image', value: 'blueberry', name: 'blueberry' }, //IMAGE
-  { index: 12, type: 'color', value: 'purple', name: 'square2' },
+  { index: 12, type: 'image', value: 'blueberry', name: 'blueberry' }, //IMAGE
+  { index: 13, type: 'color', value: 'purple', name: 'square2' },
   { index: 11, type: 'color', value: 'blue', name: 'circle2' },
   { index: 10, type: 'color', value: 'green', name: 'triangle2' },
   { index: 16, type: 'color', value: 'yellow', name: 'star3' },
