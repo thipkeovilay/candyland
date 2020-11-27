@@ -16,43 +16,127 @@ import star from '../images/board/star.png';
 import triangle from '../images/board/triangle.png';
 
 const Board = () => {
-  const { position, boardData, positionSuit, setPositionSuit } = useContext(
-    AppContext
-  );
+  const {
+    position,
+    boardData,
+    positionSuit,
+    setPosition,
+    setPositionSuit
+  } = useContext(AppContext);
 
-  const [oompa, setOompa] = useState({
-    index: 0,
-    type: '',
-    value: '',
-    name: ''
-  });
+  const [oompa, setOompa] = useState(-1);
+  const [redSpaces, setRedSpaces] = useState([0, 7, 14, 21, 28, 35]);
+  const [orangeSpaces, setOrangeSpaces] = useState([1, 8, 15, 22, 29, 36]);
+  const [yellowSpaces, setYellowSpaces] = useState([2, 9, 16, 23, 30, 37]);
+  const [greenSpaces, setGreenSpaces] = useState([3, 10, 17, 24, 31, 38]);
+  const [blueSpaces, setBlueSpaces] = useState([4, 11, 18, 25, 32, 39]);
+  const [purpleSpaces, setPurpleSpaces] = useState([5, 13, 19, 26, 33, 40]);
+  const [agustusSpace, setAugustusSpace] = useState(6);
+  const [blueberrySpace, setBlueberrySpace] = useState(12);
+  const [verucaSpace, setVerucaSpace] = useState(20);
+  const [charlieSpace, setCharlieSpace] = useState(27);
+  const [mikeSpace, setMikeSpace] = useState(34);
+  const [willySpace, setWillieSpace] = useState(41);
 
-  let filterSpaces = boardData.filter((item) => {
-    return item.value === positionSuit;
-  });
-  console.log(filterSpaces);
+  useEffect(() => {
+    const moveOompaCharacter = () => {
+      if (positionSuit === 'agustus') {
+        setOompa(agustusSpace);
+        setRedSpaces([7, 14, 21, 28, 35]);
+        setOrangeSpaces([8, 15, 22, 29, 36]);
+        setYellowSpaces([9, 16, 23, 30, 37]);
+        setGreenSpaces([10, 17, 24, 31, 38]);
+        setBlueSpaces([11, 18, 25, 32, 39]);
+        setPurpleSpaces([13, 19, 26, 33, 40]);
+      }
+      if (positionSuit === 'blueberry') {
+        setOompa(blueberrySpace);
+        setRedSpaces([21, 28, 35]);
+        setOrangeSpaces([22, 29, 36]);
+        setYellowSpaces([16, 23, 30, 37]);
+        setGreenSpaces([10, 17, 24, 31, 38]);
+        setBlueSpaces([11, 18, 25, 32, 39]);
+        setPurpleSpaces([13, 19, 26, 33, 40]);
+      }
+      if (positionSuit === 'veruca') {
+        setOompa(verucaSpace);
+        setRedSpaces([21, 28, 35]);
+        setOrangeSpaces([22, 29, 36]);
+        setYellowSpaces([23, 30, 37]);
+        setGreenSpaces([24, 31, 38]);
+        setBlueSpaces([25, 32, 39]);
+        setPurpleSpaces([26, 33, 40]);
+      }
+      if (positionSuit === 'mike') {
+        setOompa(mikeSpace);
+        setRedSpaces([28, 35]);
+        setOrangeSpaces([29, 36]);
+        setYellowSpaces([30, 37]);
+        setGreenSpaces([31, 38]);
+        setBlueSpaces([32, 39]);
+        setPurpleSpaces([33, 40]);
+      }
+      if (positionSuit === 'charlie') {
+        setOompa(charlieSpace);
+        setRedSpaces([35]);
+        setOrangeSpaces([36]);
+        setYellowSpaces([37]);
+        setGreenSpaces([38]);
+        setBlueSpaces([39]);
+        setPurpleSpaces([40]);
+      }
+      if (positionSuit === 'willy') {
+        setOompa(willySpace);
+        // trigger game winning alert
+      }
+    };
 
-  const next = async () => {
-    var i = 0,
-      l = filterSpaces.length;
+    const moveOompaSuit = () => {
+      if (positionSuit === 'red') {
+        setOompa(redSpaces[0]);
+        redSpaces.shift();
+        // setOrangeSpaces(orangeSpaces.filter((item) => item > redSpaces[0]));
+      }
+      if (positionSuit === 'orange') {
+        setOompa(orangeSpaces[0]);
+        orangeSpaces.shift();
+        redSpaces.shift();
+      }
+      if (positionSuit === 'yellow') {
+        setOompa(yellowSpaces[0]);
+        yellowSpaces.shift();
+        orangeSpaces.shift();
+        redSpaces.shift();
+      }
+      if (positionSuit === 'green') {
+        setOompa(greenSpaces[0]);
+        greenSpaces.shift();
+        yellowSpaces.shift();
+        orangeSpaces.shift();
+        redSpaces.shift();
+      }
+      if (positionSuit === 'blue') {
+        setOompa(blueSpaces[0]);
+        blueSpaces.shift();
+        greenSpaces.shift();
+        yellowSpaces.shift();
+        orangeSpaces.shift();
+        redSpaces.shift();
+      }
+      if (positionSuit === 'purple') {
+        setOompa(purpleSpaces[0]);
+        purpleSpaces.shift();
+        blueSpaces.shift();
+        greenSpaces.shift();
+        yellowSpaces.shift();
+        orangeSpaces.shift();
+        redSpaces.shift();
+      }
+    };
 
-    while (true) {
-      // keep looping
-      if (i >= l) i = 0;
-
-      // the loop block
-
-      break;
-
-      i += 1;
-    }
-    let nextElement = await filterSpaces[
-      i == filterSpaces.length - 1 ? 0 : i + 1
-    ];
-    console.log(nextElement);
-  };
-
-  next();
+    moveOompaCharacter();
+    moveOompaSuit();
+  }, [position]);
 
   //check index position then display card with sweet effect
 
@@ -67,39 +151,19 @@ const Board = () => {
             return a.index > b.index ? 1 : a.index < b.index ? -1 : 0;
           })
           .map((space, index) => {
-            console.log(position);
-            console.log(space.index);
-            console.log(oompa.position);
-            if (positionSuit === space.value) {
-              // const handleRoll = (arr) => {
-              //   let cur = 0;
-              //   arr.next = function () {
-              //     console.log(++cur);
-              //   };
-              // };
-
-              // handleRoll(filterSpaces);
-              // filterSpaces.next();
-
-              // function* handleRoll() {
-              //   yield filterSpaces;
-              // }
-
-              // let newArray = handleRoll();
-
-              // console.log(newArray.next().value);
-
-              // const cycle = (array, index) => {
-              //   let currentIndex = array.indexOf(index);
-              //   if (array.length > 1) {
-              //     currentIndex = array[currentIndex] + 1;
-              //     console.log(currentIndex);
-              //   } else {
-              //     console.log(currentIndex);
-              //   }
-              // };
-
-              // cycle(boardData, space.index);
+            // console.log(position);
+            // console.log(space.index);
+            // console.log(oompa.position);
+            if (space.index === undefined) {
+              return (
+                <div className="Square">
+                  <div className="boardImages"></div>
+                </div>
+              );
+            }
+            if (space.index === oompa) {
+              console.log(space.index);
+              console.log(oompa);
               return (
                 <div className="Square">
                   <div className="Oompa">
@@ -189,7 +253,7 @@ const Board = () => {
                 </div>
               );
             }
-            if (space.value === 'mikeTV') {
+            if (space.value === 'mike') {
               return (
                 <div className="Square">
                   <div className="mikeTV">
