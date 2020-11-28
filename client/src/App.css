@@ -1,22 +1,17 @@
 /* This is where we define how many tiles across/down 
-- we don't want it to felx */
+- we don't want it to flex */
 .board {
   display: grid;
   grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-gap: 2rem;
-  background: rgb(188, 247, 255);
+
+  /* background: rgb(188, 247, 255);
   background: radial-gradient(
     circle,
     rgba(188, 247, 255, 1) 0%,
-    rgba(148, 216, 233, 1) 100%
-  );
-  /* background-image: url('./images/factory-background.jpg'); */
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 200vh;
-  align-content: center; */
+    rgba(148, 216, 233, 1) 100% */
+  /* ); */
 }
 
 .wonkaheader {
