@@ -20,60 +20,60 @@ import trianglecard from '../images/cards/triangle-card.png';
 import verucacard from '../images/cards/veruca-card.png';
 import willycard from '../images/cards/willy-card.png';
 
-const Roll = () => {
-  const {
-    roll,
-    setRoll,
-    setPosition,
-    position,
-    positionSuit,
-    setPositionSuit
-  } = useContext(AppContext);
-  const [image, getImage] = useState('');
+// const Roll = () => {
+//   const {
+//     roll,
+//     setRoll,
+//     setPosition,
+//     position,
+//     positionSuit,
+//     setPositionSuit
+//   } = useContext(AppContext);
+//   const [image, getImage] = useState('');
 
-  const assignCard = (roll) => {
-    switch (roll) {
-      case 1:
-        return heartcard;
-        break;
-      case 2:
-        return diamondcard;
-        break;
-      case 3:
-        return starcard;
-        break;
-      case 4:
-        return trianglecard;
-        break;
-      case 5:
-        return circlecard;
-        break;
-      case 6:
-        return squarecard;
-        break;
-      case 7:
-        return agustuscard;
-        break;
-      case 8:
-        return blueberrycard;
-        break;
-      case 9:
-        return verucacard;
-        break;
-      case 10:
-        return mikecard;
-        break;
-      case 11:
-        return charliecard;
-        break;
-      case 12:
-        return willycard;
-        break;
-      default:
-        return goldenticket;
-    }
-  };
-};
+//   const assignCard = (roll) => {
+//     switch (roll) {
+//       case 1:
+//         return heartcard;
+//         break;
+//       case 2:
+//         return diamondcard;
+//         break;
+//       case 3:
+//         return starcard;
+//         break;
+//       case 4:
+//         return trianglecard;
+//         break;
+//       case 5:
+//         return circlecard;
+//         break;
+//       case 6:
+//         return squarecard;
+//         break;
+//       case 7:
+//         return agustuscard;
+//         break;
+//       case 8:
+//         return blueberrycard;
+//         break;
+//       case 9:
+//         return verucacard;
+//         break;
+//       case 10:
+//         return mikecard;
+//         break;
+//       case 11:
+//         return charliecard;
+//         break;
+//       case 12:
+//         return willycard;
+//         break;
+//       default:
+//         return goldenticket;
+//     }
+//   };
+// };
 
 const Board = () => {
   const { position, boardData, positionSuit, setPositionSuit } = useContext(
