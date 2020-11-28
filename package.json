@@ -2,6 +2,9 @@
   "name": "midterm_template",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "14.14.0"
+  },
   "license": "MIT",
   "dependencies": {
     "animate.css": "^4.1.1",
