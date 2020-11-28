@@ -25,14 +25,14 @@ const board = [
   {},
   {},
   { index: 8, type: 'color', value: 'orange', name: 'diamond2' },
-  { index: 16, type: 'color', value: 'yellow', name: 'star2' },
+  { index: 9, type: 'color', value: 'yellow', name: 'star2' },
   { index: 15, type: 'color', value: 'orange', name: 'diamond3' },
   { index: 14, type: 'color', value: 'red', name: 'heart3' },
-  { index: 13, type: 'image', value: 'blueberry', name: 'blueberry' }, //IMAGE
-  { index: 12, type: 'color', value: 'purple', name: 'square2' },
+  { index: 12, type: 'image', value: 'blueberry', name: 'blueberry' }, //IMAGE
+  { index: 13, type: 'color', value: 'purple', name: 'square2' },
   { index: 11, type: 'color', value: 'blue', name: 'circle2' },
   { index: 10, type: 'color', value: 'green', name: 'triangle2' },
-  { index: 9, type: 'color', value: 'yellow', name: 'star3' },
+  { index: 16, type: 'color', value: 'yellow', name: 'star3' },
   { index: 17, type: 'color', value: 'green', name: 'triangle3' },
   {},
   {},
@@ -57,7 +57,7 @@ const board = [
   {},
   {},
   { index: 26, type: 'color', value: 'purple', name: 'square4' },
-  { index: 34, type: 'image', value: 'mikeTV', name: 'mikeTV' }, //IMAGE
+  { index: 34, type: 'image', value: 'mike', name: 'mike' }, //IMAGE
   { index: 33, type: 'color', value: 'purple', name: 'square4' },
   { index: 32, type: 'color', value: 'blue', name: 'circle5' },
   { index: 31, type: 'color', value: 'green', name: 'triangle5' },

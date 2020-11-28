@@ -78,12 +78,12 @@ const Roll = () => {
 
   const rollTheDice = async (e) => {
     e.preventDefault();
-    const randomNumber = Math.floor(Math.random() * 12 + 1);
+    const randomNumber = Math.floor(Math.random() * 12);
     setRoll(randomNumber);
 
     try {
       const { data } = await axios.get(`/api/draw/${randomNumber}`);
-      console.log(data);
+      // console.log(data);
       setPositionSuit(data.value);
       setPosition(Math.floor(data.id * 3.5) + 1);
       const displayCard = () => {
@@ -94,8 +94,8 @@ const Roll = () => {
         }
       };
       displayCard();
-      console.log(data.name);
-      console.log(data.id);
+      // console.log(data.name);
+      // console.log(data.id);
     } catch (error) {
       console.log(error);
     }
@@ -106,7 +106,7 @@ const Roll = () => {
       <button id="button" onClick={rollTheDice}>
         <img className="peppermint" src={pushcandy} alt="candy" />
       </button>
-      <span>{roll}</span>
+      <span>{positionSuit}</span>
     </div>
   );
 };
