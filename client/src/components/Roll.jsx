@@ -7,6 +7,71 @@ import Swal from 'sweetalert2';
 import goldenticket from '../images/golden-ticket.png';
 import heart from '../images/board/heart.png';
 import pushcandy from '../images/pushcandy.png';
+import agustuscard from '../images/cards/agustus-card.png';
+import blueberrycard from '../images/cards/blueberry-card.png';
+import charliecard from '../images/cards/charlie-card.png';
+import circlecard from '../images/cards/circle-card.png';
+import diamondcard from '../images/cards/diamond-card.png';
+import heartcard from '../images/cards/heart-card.png';
+import mikecard from '../images/cards/mike-card.png';
+import squarecard from '../images/cards/square-card.png';
+import starcard from '../images/cards/star-card.png';
+import trianglecard from '../images/cards/triangle-card.png';
+import verucacard from '../images/cards/veruca-card.png';
+import willycard from '../images/cards/willy-card.png';
+
+// const Roll = {} => {
+//   const {
+//     roll,
+//     setRoll,
+//     setPosition,
+//     position,
+//     positionSuit,
+//     setPositionSuit
+//   } =useContext (AppContext);
+//   const [image, getImage] = useState {''};
+
+// const assignCard = {roll} => {
+//   switch(roll) {
+//     case 1:
+//       return heartcard;
+//       break;
+//     case 2:
+//       return diamondcard;
+//       break;
+//     case 3:
+//         return starcard;
+//         break;
+//     case 4:
+//       return trianglecard;
+//       break;
+//     case 5:
+//       return circlecard;
+//       break;
+//     case 6:
+//       return squarecard;
+//       break;
+//     case 7:
+//       return diamondcard;
+//       break;
+//     case 8:
+//       return diamondcard;
+//       break;
+//     case 9:
+//       return diamondcard:
+//       break;
+//     case 10:
+//       return diamondcard:
+//       break;
+//     case 11:
+//       return diamondcard:
+//       break;
+//     case 12:
+//       return diamondcard:
+//       break;
+//   }
+// }
+// }
 
 const Board = () => {
   const { position, boardData, positionSuit, setPositionSuit } = useContext(
