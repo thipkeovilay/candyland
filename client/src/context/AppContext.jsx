@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import board from '../constants/candyland';
+import board from '../Constants/candyland';
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
