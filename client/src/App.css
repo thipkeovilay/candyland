@@ -5,17 +5,27 @@
   grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-gap: 2rem;
-
-  /* background: rgb(188, 247, 255);
-  background: radial-gradient(
-    circle,
-    rgba(188, 247, 255, 1) 0%,
-    rgba(148, 216, 233, 1) 100% */
-  /* ); */
 }
 
-.wonkaheader {
-  width: 24rem;
+.logo {
+  margin-left: 2rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+#logo1 {
+  width: 75rem;
+}
+
+.headerOne {
+  display: flex;
+  flex-direction: row;
+  background-color: #d8dfea;
+}
+
+#button {
+  border: none;
+  background-color: #d8dfea;
 }
 
 .Square {
@@ -41,8 +51,11 @@
 
 .peppermint {
   animation: rotation 8s infinite linear;
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @keyframes rotation {
@@ -54,7 +67,7 @@
   }
 }
 
-/* html,
+html,
 body,
 .cloudcontainer {
   width: 100%;
@@ -64,6 +77,8 @@ body,
   margin: 0;
   padding: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 .cloudcontainer {
   background-color: #004ced;
@@ -87,4 +102,4 @@ body,
   100% {
     background-position: 1000px 200px, 1200px 300px, 1100px 250px;
   }
-} */
+}

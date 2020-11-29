@@ -36,7 +36,7 @@ const Board = () => {
   const [verucaSpace, setVerucaSpace] = useState(20);
   const [mikeSpace, setMikeSpace] = useState(34);
   const [charlieSpace, setCharlieSpace] = useState(27);
-  const [willySpace, setWillieSpace] = useState(41);
+  const [willySpace, setWillySpace] = useState(41);
 
   useEffect(() => {
     const moveOompaCharacter = () => {
@@ -95,18 +95,20 @@ const Board = () => {
       if (positionSuit === 'red') {
         setOompa(redSpaces[0]);
         redSpaces.shift();
-        // setOrangeSpaces(orangeSpaces.filter((item) => item > redSpaces[0]));
+        setOrangeSpaces(orangeSpaces.filter((item) => item > redSpaces[0]));
       }
       if (positionSuit === 'orange') {
         setOompa(orangeSpaces[0]);
         orangeSpaces.shift();
         redSpaces.shift();
+        setYellowSpaces(yellowSpaces.filter((item) => item > orangeSpaces[0]));
       }
       if (positionSuit === 'yellow') {
         setOompa(yellowSpaces[0]);
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        setGreenSpaces(greenSpaces.filter((item) => item > yellowSpaces[0]));
       }
       if (positionSuit === 'green') {
         setOompa(greenSpaces[0]);
@@ -114,6 +116,7 @@ const Board = () => {
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        setBlueSpaces(blueSpaces.filter((item) => item > greenSpaces[0]));
       }
       if (positionSuit === 'blue') {
         setOompa(blueSpaces[0]);
@@ -122,6 +125,7 @@ const Board = () => {
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        setPurpleSpaces(purpleSpaces.filter((item) => item > blueSpaces[0]));
       }
       if (positionSuit === 'purple') {
         setOompa(purpleSpaces[0]);
@@ -131,6 +135,14 @@ const Board = () => {
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        // setAugustusSpace(agustusSpace.filter((item) => item > purpleSpaces[0]));
+        // setBlueberrySpace(
+        //   blueberrySpace.filter((item) => item > purpleSpaces[0])
+        // );
+        // setVerucaSpace(verucaSpace.filter((item) => item > purpleSpaces[0]));
+        // setMikeSpace(mikeSpace.filter((item) => item > purpleSpaces[0]));
+        // setCharlieSpace(charlieSpace.filter((item) => item > purpleSpaces[0]));
+        // setWillySpace(willySpace.filter((item) => item > purpleSpaces[0]));
       }
     };
 
@@ -276,6 +288,15 @@ const Board = () => {
                 <div className="Square">
                   <div className="willy">
                     <img className="characterImages" src={Willy} />
+                  </div>
+                </div>
+              );
+            }
+            if (space.value === 'background') {
+              return (
+                <div>
+                  <div className="cloudcontainer">
+                    <div id="cloud-intro"></div>
                   </div>
                 </div>
               );

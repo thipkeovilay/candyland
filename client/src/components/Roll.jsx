@@ -17,6 +17,7 @@ import starcard from '../images/cards/star-card.png';
 import trianglecard from '../images/cards/triangle-card.png';
 import verucacard from '../images/cards/veruca-card.png';
 import willycard from '../images/cards/willy-card.png';
+import logo1 from '../images/extras/logo1.png';
 
 const Roll = () => {
   const {
@@ -145,10 +146,13 @@ const Roll = () => {
   };
 
   return (
-    <div>
+    <div className="headerOne">
       <button id="button" onClick={rollTheDice}>
         <img className="peppermint" src={pushcandy} alt="candy" />
       </button>
+      <div className="logo">
+        <img id="logo1" src={logo1}></img>
+      </div>
       <span>{positionSuit}</span>
     </div>
   );

@@ -1,7 +1,7 @@
 //This represents each tile on the board.
 
 const board = [
-  {},
+  { index: 67, value: 'background' },
   {},
   {},
   {},
