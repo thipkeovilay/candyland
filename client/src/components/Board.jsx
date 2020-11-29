@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext, AppContextProvider } from '../context/AppContext';
 import Roll from './Roll';
+import Swal from 'sweetalert2';
+import goldenticket from '../images/golden-ticket.png';
 import Oompa from '../images/board/Oompa.png';
 import Agustus from '../images/board/Agustus.png';
 import Blueberry from '../images/board/Blueberry.png';
@@ -14,6 +16,7 @@ import heart from '../images/board/heart.png';
 import square from '../images/board/square.png';
 import star from '../images/board/star.png';
 import triangle from '../images/board/triangle.png';
+import chocobar from '../images/extras/choco-bar.png';
 
 const Board = () => {
   const {
@@ -87,7 +90,15 @@ const Board = () => {
       }
       if (positionSuit === 'willy') {
         setOompa(willySpace);
-        // trigger game winning alert
+        return Swal.fire({
+          title: 'Sweet! You won!',
+          imageUrl: goldenticket,
+          imageWidth: 700,
+          imageHeight: 200,
+          imageAlt: 'Golden Ticket',
+          showButton: true,
+          confirmButtonText: 'Play Again'
+        });
       }
     };
 
@@ -135,14 +146,6 @@ const Board = () => {
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
-        // setAugustusSpace(agustusSpace.filter((item) => item > purpleSpaces[0]));
-        // setBlueberrySpace(
-        //   blueberrySpace.filter((item) => item > purpleSpaces[0])
-        // );
-        // setVerucaSpace(verucaSpace.filter((item) => item > purpleSpaces[0]));
-        // setMikeSpace(mikeSpace.filter((item) => item > purpleSpaces[0]));
-        // setCharlieSpace(charlieSpace.filter((item) => item > purpleSpaces[0]));
-        // setWillySpace(willySpace.filter((item) => item > purpleSpaces[0]));
       }
     };
 
@@ -300,6 +303,15 @@ const Board = () => {
                   </div>
                 </div>
               );
+            }
+            if (space.value === 'chocobar') {
+              return (
+                <div>
+                  <div className="chocobar">
+                    <img src={chocobar}></img>
+                  </div>
+                </div>
+              );
             } else {
               return (
                 <div className="Square">
@@ -312,4 +324,5 @@ const Board = () => {
     </>
   );
 };
+
 export default Board;

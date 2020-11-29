@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import goldenticket from '../images/golden-ticket.png';
@@ -18,6 +17,7 @@ import trianglecard from '../images/cards/triangle-card.png';
 import verucacard from '../images/cards/veruca-card.png';
 import willycard from '../images/cards/willy-card.png';
 import logo1 from '../images/extras/logo1.png';
+// import ring from '../images/audio/ring.mp3';
 
 const Roll = () => {
   const {
@@ -30,63 +30,74 @@ const Roll = () => {
   } = useContext(AppContext);
   const [image, setImage] = useState('');
 
+  // const audioByColor = {
+  //   red: document.getElementById({ ring })
+  //   "green": document.getElementById("audioG"),
+  //   "blue": document.getElementById("audioB"),
+  //   "yellow": document.getElementById("audioY")
+  // };
+
+  // function playRed() {
+  //   const audio = document.getElementById({ ring });
+  // }
+
   const assignCard = (roll) => {
     switch (roll) {
-      case 1:
+      case 'red':
         return heartcard;
+        // audio.play();
         break;
-      case 2:
+      case 'orange':
         return diamondcard;
         break;
-      case 3:
+      case 'yellow':
         return starcard;
         break;
-      case 4:
+      case 'green':
         return trianglecard;
         break;
-      case 5:
+      case 'blue':
         return circlecard;
         break;
-      case 6:
+      case 'purple':
         return squarecard;
         break;
-      case 7:
+      case 'agustus':
         return agustuscard;
         break;
-      case 8:
+      case 'blueberry':
         return blueberrycard;
         break;
-      case 9:
+      case 'veruca':
         return verucacard;
         break;
-      case 10:
+      case 'mike':
         return mikecard;
         break;
-      case 11:
+      case 'charlie':
         return charliecard;
         break;
-      case 12:
+      case 'willy':
         return willycard;
         break;
       default:
         return goldenticket;
     }
-    assignCard();
   };
 
   useEffect(() => {
     // const randomIndex = Math.floor(Math.random() * 12 + 1);
     console.log(position);
     if (position === 0) return;
-    if (position === 41) {
-      return Swal.fire({
-        title: 'Sweet! You won!',
-        imageUrl: goldenticket,
-        imageWidth: 700,
-        imageHeight: 200,
-        imageAlt: 'Golden Ticket'
-      });
-    }
+    // if (position === 41) {
+    //   return Swal.fire({
+    //     title: 'Sweet! You won!',
+    //     imageUrl: goldenticket,
+    //     imageWidth: 700,
+    //     imageHeight: 200,
+    //     imageAlt: 'Golden Ticket'
+    //   });
+    // }
 
     // call function and capture return of the function to display cards randomly, fix line 31.
     let timerInterval;
@@ -130,12 +141,6 @@ const Roll = () => {
       setPositionSuit(data.value);
       setPosition(Math.floor(data.id * 3.5) + 1);
       const displayCard = () => {
-        //   if (roll === 1) {
-        //     setImage(data.src);
-        //   } else {
-        //     setImage({ goldenticket });
-        //   }
-        // };
         displayCard();
         console.log(data.name);
         console.log(data.id);
@@ -150,6 +155,7 @@ const Roll = () => {
       <button id="button" onClick={rollTheDice}>
         <img className="peppermint" src={pushcandy} alt="candy" />
       </button>
+      {/* <div class="pushPad" onclick="audioByColor[''].play()"></div> */}
       <div className="logo">
         <img id="logo1" src={logo1}></img>
       </div>

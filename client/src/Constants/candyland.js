@@ -83,7 +83,7 @@ const board = [
   {},
   {},
   {},
-  {},
+  { index: 45, value: 'chocobar' },
   {},
   {},
   {},
