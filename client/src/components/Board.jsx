@@ -25,56 +25,56 @@ const Board = () => {
   } = useContext(AppContext);
 
   const [oompa, setOompa] = useState(-1);
-  const [redSpaces, setRedSpaces] = useState([0, 7, 14, 21, 28, 35]);
-  const [orangeSpaces, setOrangeSpaces] = useState([1, 8, 15, 22, 29, 36]);
-  const [yellowSpaces, setYellowSpaces] = useState([2, 9, 16, 23, 30, 37]);
-  const [greenSpaces, setGreenSpaces] = useState([3, 10, 17, 24, 31, 38]);
-  const [blueSpaces, setBlueSpaces] = useState([4, 11, 18, 25, 32, 39]);
-  const [purpleSpaces, setPurpleSpaces] = useState([5, 13, 19, 26, 33, 40]);
+  const [redSpaces, setRedSpaces] = useState([0, 7, 11, 21, 33, 35]);
+  const [orangeSpaces, setOrangeSpaces] = useState([1, 8, 10, 22, 32, 36]);
+  const [yellowSpaces, setYellowSpaces] = useState([2, 16, 9, 23, 31, 37]);
+  const [greenSpaces, setGreenSpaces] = useState([3, 15, 17, 24, 30, 38]);
+  const [blueSpaces, setBlueSpaces] = useState([4, 14, 18, 25, 29, 39]);
+  const [purpleSpaces, setPurpleSpaces] = useState([5, 13, 19, 26, 28, 40]);
   const [agustusSpace, setAugustusSpace] = useState(6);
   const [blueberrySpace, setBlueberrySpace] = useState(12);
   const [verucaSpace, setVerucaSpace] = useState(20);
-  const [charlieSpace, setCharlieSpace] = useState(27);
   const [mikeSpace, setMikeSpace] = useState(34);
+  const [charlieSpace, setCharlieSpace] = useState(27);
   const [willySpace, setWillieSpace] = useState(41);
 
   useEffect(() => {
     const moveOompaCharacter = () => {
       if (positionSuit === 'agustus') {
         setOompa(agustusSpace);
-        setRedSpaces([7, 14, 21, 28, 35]);
-        setOrangeSpaces([8, 15, 22, 29, 36]);
-        setYellowSpaces([9, 16, 23, 30, 37]);
-        setGreenSpaces([10, 17, 24, 31, 38]);
-        setBlueSpaces([11, 18, 25, 32, 39]);
-        setPurpleSpaces([13, 19, 26, 33, 40]);
+        setRedSpaces([7, 11, 21, 33, 35]);
+        setOrangeSpaces([8, 10, 22, 32, 36]);
+        setYellowSpaces([16, 9, 23, 31, 37]);
+        setGreenSpaces([15, 17, 24, 30, 38]);
+        setBlueSpaces([14, 18, 25, 29, 39]);
+        setPurpleSpaces([13, 19, 26, 28, 40]);
       }
       if (positionSuit === 'blueberry') {
         setOompa(blueberrySpace);
-        setRedSpaces([21, 28, 35]);
-        setOrangeSpaces([22, 29, 36]);
-        setYellowSpaces([16, 23, 30, 37]);
-        setGreenSpaces([10, 17, 24, 31, 38]);
-        setBlueSpaces([11, 18, 25, 32, 39]);
-        setPurpleSpaces([13, 19, 26, 33, 40]);
+        setRedSpaces([11, 21, 33, 35]);
+        setOrangeSpaces([10, 22, 32, 36]);
+        setYellowSpaces([9, 23, 31, 37]);
+        setGreenSpaces([17, 24, 30, 38]);
+        setBlueSpaces([18, 25, 29, 39]);
+        setPurpleSpaces([19, 26, 28, 40]);
       }
       if (positionSuit === 'veruca') {
         setOompa(verucaSpace);
-        setRedSpaces([21, 28, 35]);
-        setOrangeSpaces([22, 29, 36]);
-        setYellowSpaces([23, 30, 37]);
-        setGreenSpaces([24, 31, 38]);
-        setBlueSpaces([25, 32, 39]);
-        setPurpleSpaces([26, 33, 40]);
+        setRedSpaces([21, 33, 35]);
+        setOrangeSpaces([22, 32, 36]);
+        setYellowSpaces([23, 31, 37]);
+        setGreenSpaces([24, 30, 38]);
+        setBlueSpaces([25, 29, 39]);
+        setPurpleSpaces([26, 28, 40]);
       }
       if (positionSuit === 'mike') {
         setOompa(mikeSpace);
-        setRedSpaces([28, 35]);
-        setOrangeSpaces([29, 36]);
-        setYellowSpaces([30, 37]);
-        setGreenSpaces([31, 38]);
-        setBlueSpaces([32, 39]);
-        setPurpleSpaces([33, 40]);
+        setRedSpaces([33, 35]);
+        setOrangeSpaces([32, 36]);
+        setYellowSpaces([31, 37]);
+        setGreenSpaces([30, 38]);
+        setBlueSpaces([29, 39]);
+        setPurpleSpaces([28, 40]);
       }
       if (positionSuit === 'charlie') {
         setOompa(charlieSpace);
