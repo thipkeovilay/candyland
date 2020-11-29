@@ -1,32 +1,38 @@
 /* This is where we define how many tiles across/down 
-- we don't want it to felx */
+- we don't want it to flex */
 .board {
   display: grid;
   grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-template-rows: 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem 8rem;
   grid-gap: 2rem;
-  background: rgb(188, 247, 255);
-  background: radial-gradient(
-    circle,
-    rgba(188, 247, 255, 1) 0%,
-    rgba(148, 216, 233, 1) 100%
-  );
-  /* background-image: url('./images/factory-background.jpg'); */
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 200vh;
-  align-content: center; */
 }
 
-.wonkaheader {
-  width: 24rem;
+.logo {
+  margin-left: 2rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+#logo1 {
+  width: 75rem;
+}
+
+.headerOne {
+  display: flex;
+  flex-direction: row;
+  background-color: #d8dfea;
+}
+
+#button {
+  border: none;
+  background-color: #d8dfea;
 }
 
 .Square {
   width: 8rem;
   height: 8rem;
   margin-left: 90px;
+  justify-content: center;
 }
 
 .boardImages {
@@ -40,14 +46,35 @@
 }
 
 .oompa-img {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
+  -webkit-animation: oompa 1s infinite; /* Safari 4+ */
+  -moz-animation: oompa 1s infinite; /* Fx 5+ */
+  -o-animation: oompa 1s infinite; /* Opera 12+ */
+  animation: oompa 1s infinite; /* IE 10+, Fx 29+ */
+}
+@keyframes oompa {
+  0%,
+  49% {
+    background-color: #fbc93d;
+    border: 6px solid #fde190;
+    border-radius: 25%;
+  }
+  50%,
+  100% {
+    background-color: #fde190;
+    border: 6px solid #fbc93d;
+    border-radius: 25%;
+  }
 }
 
 .peppermint {
   animation: rotation 8s infinite linear;
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @keyframes rotation {
@@ -59,7 +86,7 @@
   }
 }
 
-/* html,
+html,
 body,
 .cloudcontainer {
   width: 100%;
@@ -69,6 +96,8 @@ body,
   margin: 0;
   padding: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 .cloudcontainer {
   background-color: #004ced;
@@ -92,4 +121,58 @@ body,
   100% {
     background-position: 1000px 200px, 1200px 300px, 1100px 250px;
   }
-} */
+}
+
+@-webkit-keyframes wiggle {
+  0% {
+    -webkit-transform: rotateZ(2deg);
+  }
+  50% {
+    -webkit-transform: rotateZ(-2deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(2deg);
+  }
+}
+@-moz-keyframes wiggle {
+  0% {
+    -moz-transform: rotateZ(2deg);
+  }
+  50% {
+    -moz-transform: rotateZ(-2deg);
+  }
+  100% {
+    -moz-transform: rotateZ(2deg);
+  }
+}
+@-o-keyframes wiggle {
+  0% {
+    -o-transform: rotateZ(2deg);
+  }
+  50% {
+    -o-transform: rotateZ(-2deg);
+  }
+  100% {
+    -o-transform: rotateZ(2deg);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(2deg);
+  }
+  50% {
+    transform: rotateZ(-2deg);
+  }
+  100% {
+    transform: rotateZ(2deg);
+  }
+}
+
+.chocobar {
+  width: 10rem;
+
+  -webkit-animation: wiggle 0.4s ease infinite;
+  -moz-animation: wiggle 0.4s ease infinite;
+  -o-animation: wiggle 0.4s ease infinite;
+  animation: wiggle 0.4s ease infinite;
+}

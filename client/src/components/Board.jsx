@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext, AppContextProvider } from '../context/AppContext';
 import Roll from './Roll';
+import Swal from 'sweetalert2';
+import goldenticket from '../images/golden-ticket.png';
 import Oompa from '../images/board/Oompa.png';
 import Agustus from '../images/board/Agustus.png';
 import Blueberry from '../images/board/Blueberry.png';
@@ -14,6 +16,7 @@ import heart from '../images/board/heart.png';
 import square from '../images/board/square.png';
 import star from '../images/board/star.png';
 import triangle from '../images/board/triangle.png';
+import chocobar from '../images/extras/choco-bar.png';
 
 const Board = () => {
   const {
@@ -25,56 +28,56 @@ const Board = () => {
   } = useContext(AppContext);
 
   const [oompa, setOompa] = useState(-1);
-  const [redSpaces, setRedSpaces] = useState([0, 7, 14, 21, 28, 35]);
-  const [orangeSpaces, setOrangeSpaces] = useState([1, 8, 15, 22, 29, 36]);
-  const [yellowSpaces, setYellowSpaces] = useState([2, 9, 16, 23, 30, 37]);
-  const [greenSpaces, setGreenSpaces] = useState([3, 10, 17, 24, 31, 38]);
-  const [blueSpaces, setBlueSpaces] = useState([4, 11, 18, 25, 32, 39]);
-  const [purpleSpaces, setPurpleSpaces] = useState([5, 13, 19, 26, 33, 40]);
+  const [redSpaces, setRedSpaces] = useState([0, 7, 11, 21, 33, 35]);
+  const [orangeSpaces, setOrangeSpaces] = useState([1, 8, 10, 22, 32, 36]);
+  const [yellowSpaces, setYellowSpaces] = useState([2, 16, 9, 23, 31, 37]);
+  const [greenSpaces, setGreenSpaces] = useState([3, 15, 17, 24, 30, 38]);
+  const [blueSpaces, setBlueSpaces] = useState([4, 14, 18, 25, 29, 39]);
+  const [purpleSpaces, setPurpleSpaces] = useState([5, 13, 19, 26, 28, 40]);
   const [agustusSpace, setAugustusSpace] = useState(6);
   const [blueberrySpace, setBlueberrySpace] = useState(12);
   const [verucaSpace, setVerucaSpace] = useState(20);
-  const [charlieSpace, setCharlieSpace] = useState(27);
   const [mikeSpace, setMikeSpace] = useState(34);
-  const [willySpace, setWillieSpace] = useState(41);
+  const [charlieSpace, setCharlieSpace] = useState(27);
+  const [willySpace, setWillySpace] = useState(41);
 
   useEffect(() => {
     const moveOompaCharacter = () => {
       if (positionSuit === 'agustus') {
         setOompa(agustusSpace);
-        setRedSpaces([7, 14, 21, 28, 35]);
-        setOrangeSpaces([8, 15, 22, 29, 36]);
-        setYellowSpaces([9, 16, 23, 30, 37]);
-        setGreenSpaces([10, 17, 24, 31, 38]);
-        setBlueSpaces([11, 18, 25, 32, 39]);
-        setPurpleSpaces([13, 19, 26, 33, 40]);
+        setRedSpaces([7, 11, 21, 33, 35]);
+        setOrangeSpaces([8, 10, 22, 32, 36]);
+        setYellowSpaces([16, 9, 23, 31, 37]);
+        setGreenSpaces([15, 17, 24, 30, 38]);
+        setBlueSpaces([14, 18, 25, 29, 39]);
+        setPurpleSpaces([13, 19, 26, 28, 40]);
       }
       if (positionSuit === 'blueberry') {
         setOompa(blueberrySpace);
-        setRedSpaces([21, 28, 35]);
-        setOrangeSpaces([22, 29, 36]);
-        setYellowSpaces([16, 23, 30, 37]);
-        setGreenSpaces([10, 17, 24, 31, 38]);
-        setBlueSpaces([11, 18, 25, 32, 39]);
-        setPurpleSpaces([13, 19, 26, 33, 40]);
+        setRedSpaces([11, 21, 33, 35]);
+        setOrangeSpaces([10, 22, 32, 36]);
+        setYellowSpaces([9, 23, 31, 37]);
+        setGreenSpaces([17, 24, 30, 38]);
+        setBlueSpaces([18, 25, 29, 39]);
+        setPurpleSpaces([19, 26, 28, 40]);
       }
       if (positionSuit === 'veruca') {
         setOompa(verucaSpace);
-        setRedSpaces([21, 28, 35]);
-        setOrangeSpaces([22, 29, 36]);
-        setYellowSpaces([23, 30, 37]);
-        setGreenSpaces([24, 31, 38]);
-        setBlueSpaces([25, 32, 39]);
-        setPurpleSpaces([26, 33, 40]);
+        setRedSpaces([21, 33, 35]);
+        setOrangeSpaces([22, 32, 36]);
+        setYellowSpaces([23, 31, 37]);
+        setGreenSpaces([24, 30, 38]);
+        setBlueSpaces([25, 29, 39]);
+        setPurpleSpaces([26, 28, 40]);
       }
       if (positionSuit === 'mike') {
         setOompa(mikeSpace);
-        setRedSpaces([28, 35]);
-        setOrangeSpaces([29, 36]);
-        setYellowSpaces([30, 37]);
-        setGreenSpaces([31, 38]);
-        setBlueSpaces([32, 39]);
-        setPurpleSpaces([33, 40]);
+        setRedSpaces([33, 35]);
+        setOrangeSpaces([32, 36]);
+        setYellowSpaces([31, 37]);
+        setGreenSpaces([30, 38]);
+        setBlueSpaces([29, 39]);
+        setPurpleSpaces([28, 40]);
       }
       if (positionSuit === 'charlie') {
         setOompa(charlieSpace);
@@ -87,7 +90,15 @@ const Board = () => {
       }
       if (positionSuit === 'willy') {
         setOompa(willySpace);
-        // trigger game winning alert
+        return Swal.fire({
+          title: 'Sweet! You won!',
+          imageUrl: goldenticket,
+          imageWidth: 700,
+          imageHeight: 200,
+          imageAlt: 'Golden Ticket',
+          showButton: true,
+          confirmButtonText: 'Play Again'
+        });
       }
     };
 
@@ -95,18 +106,20 @@ const Board = () => {
       if (positionSuit === 'red') {
         setOompa(redSpaces[0]);
         redSpaces.shift();
-        // setOrangeSpaces(orangeSpaces.filter((item) => item > redSpaces[0]));
+        setOrangeSpaces(orangeSpaces.filter((item) => item > redSpaces[0]));
       }
       if (positionSuit === 'orange') {
         setOompa(orangeSpaces[0]);
         orangeSpaces.shift();
         redSpaces.shift();
+        setYellowSpaces(yellowSpaces.filter((item) => item > orangeSpaces[0]));
       }
       if (positionSuit === 'yellow') {
         setOompa(yellowSpaces[0]);
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        setGreenSpaces(greenSpaces.filter((item) => item > yellowSpaces[0]));
       }
       if (positionSuit === 'green') {
         setOompa(greenSpaces[0]);
@@ -114,6 +127,7 @@ const Board = () => {
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        setBlueSpaces(blueSpaces.filter((item) => item > greenSpaces[0]));
       }
       if (positionSuit === 'blue') {
         setOompa(blueSpaces[0]);
@@ -122,6 +136,7 @@ const Board = () => {
         yellowSpaces.shift();
         orangeSpaces.shift();
         redSpaces.shift();
+        setPurpleSpaces(purpleSpaces.filter((item) => item > blueSpaces[0]));
       }
       if (positionSuit === 'purple') {
         setOompa(purpleSpaces[0]);
@@ -279,6 +294,24 @@ const Board = () => {
                   </div>
                 </div>
               );
+            }
+            if (space.value === 'background') {
+              return (
+                <div>
+                  <div className="cloudcontainer">
+                    <div id="cloud-intro"></div>
+                  </div>
+                </div>
+              );
+            }
+            if (space.value === 'chocobar') {
+              return (
+                <div>
+                  <div className="chocobar">
+                    <img src={chocobar}></img>
+                  </div>
+                </div>
+              );
             } else {
               return (
                 <div className="Square">
@@ -291,4 +324,5 @@ const Board = () => {
     </>
   );
 };
+
 export default Board;
