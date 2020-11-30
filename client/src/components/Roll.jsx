@@ -17,7 +17,7 @@ import trianglecard from '../images/cards/triangle-card.png';
 import verucacard from '../images/cards/veruca-card.png';
 import willycard from '../images/cards/willy-card.png';
 import logo1 from '../images/extras/logo1.png';
-// import ring from '../images/audio/ring.mp3';
+import Oompa from '../images/board/Oompa.png';
 
 const Roll = () => {
   const {
@@ -30,22 +30,10 @@ const Roll = () => {
   } = useContext(AppContext);
   const [image, setImage] = useState('');
 
-  // const audioByColor = {
-  //   red: document.getElementById({ ring })
-  //   "green": document.getElementById("audioG"),
-  //   "blue": document.getElementById("audioB"),
-  //   "yellow": document.getElementById("audioY")
-  // };
-
-  // function playRed() {
-  //   const audio = document.getElementById({ ring });
-  // }
-
   const assignCard = (roll) => {
     switch (roll) {
       case 'red':
         return heartcard;
-        // audio.play();
         break;
       case 'orange':
         return diamondcard;
@@ -81,28 +69,17 @@ const Roll = () => {
         return willycard;
         break;
       default:
-        return goldenticket;
+        return Oompa;
     }
   };
 
   useEffect(() => {
-    // const randomIndex = Math.floor(Math.random() * 12 + 1);
     console.log(position);
     if (position === 0) return;
-    // if (position === 41) {
-    //   return Swal.fire({
-    //     title: 'Sweet! You won!',
-    //     imageUrl: goldenticket,
-    //     imageWidth: 700,
-    //     imageHeight: 200,
-    //     imageAlt: 'Golden Ticket'
-    //   });
-    // }
 
-    // call function and capture return of the function to display cards randomly, fix line 31.
     let timerInterval;
     Swal.fire({
-      imageUrl: { roll },
+      imageUrl: `${assignCard(positionSuit)}`,
       imageWidth: 200,
       imageHeight: 300,
       timer: 5000,
@@ -155,7 +132,6 @@ const Roll = () => {
       <button id="button" onClick={rollTheDice}>
         <img className="peppermint" src={pushcandy} alt="candy" />
       </button>
-      {/* <div class="pushPad" onclick="audioByColor[''].play()"></div> */}
       <div className="logo">
         <img id="logo1" src={logo1}></img>
       </div>
